@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="rtl">
+  <head>
+    <title>شركة تأجير العقارات</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/script.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <h1>شركة تأجير العقارات</h1>
+    </div>
+
+    <div class="navbar">
+      <ul>
+        <li><a class="active" href="home.html">الصفحة الرئيسية</a></li>
+        <li><a href="aboutus.html">حول الموقع</a></li>
+        <li><a href="cars.html">استعراض العقارات</a></li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <h2>تفاصيل السيارة</h2>
+      <div class="car-details">
+        <img src="assets/images/c1.jpeg" alt="صورة السيارة" />
+        <h3>Kia Rio</h3>
+        <p>تاريخ الصنع: 2022</p>
+        <p>نوع الإيجار: يومي</p>
+        <p>قيمة الإيجار: 100 ليرة سورية</p>
+        <p>رسم إعادة الإعمار: 1%</p>
+        <p>الضرائب: 5%</p>
+      </div>
+
+      <div class="booking-form">
+        <h3>نموذج الحجز</h3>
+        <input type="checkbox" id="checkbox" onclick="showForm()" /> أرغب في
+        الحجز
+        <form
+          id="bookingForm"
+          style="display: none"
+          onsubmit="event.preventDefault(); validateForm();"
+        >
+          <label for="fullName">الاسم الكامل:</label>
+          <input type="text" id="fullName" pattern="[A-Za-z\s]+" required />
+          <br />
+          <label for="nationalID">الرقم الوطني (11 خانة):</label>
+          <input type="text" id="nationalID" pattern="[0-9]{11}" required />
+          <br />
+          <label for="mobile">رقم الجوال (10 خانات):</label>
+          <input type="text" id="mobile" pattern="[0-9]{10}" required />
+          <br />
+          <label for="email">البريد الإلكتروني:</label>
+          <input type="email" id="email" required />
+          <br />
+          <label for="birthdate">تاريخ الميلاد:</label>
+          <input type="date" id="birthdate" required />
+          <br />
+          <label for="numberOfDays">عدد الأيام:</label>
+          <input type="number" id="numberOfDays" required />
+          <br />
+          <label for="captcha">Captcha:</label>
+          <input type="text" id="captcha" required />
+          <span id="captchaCode"></span>
+          <button onclick="generateNewCaptcha()">تجديد الرمز</button>
+          <script>
+            generateNewCaptcha();
+          </script>
+          <br />
+          <input type="submit" value="حجز" />
+        </form>
+      </div>
+
+      <a href="home.html">إلغاء</a>
+    </div>
+  </body>
+</html>
